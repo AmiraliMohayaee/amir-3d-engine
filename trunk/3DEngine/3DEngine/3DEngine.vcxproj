@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E13B6C55-502B-481B-B147-9A751873C1AA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>My3DEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <IncludePath>$(SolutionDir)\3DEngine\GLEW\Include;$(SolutionDir)\3DEngine\ffllapi;$(SolutionDir)\3DEngine\Bullet\Include\src;C:\Program Files %28x86%29\Microsoft SDKs\Windows\v7.0A\Include;$(SolutionDir)\3DEngine\SDL\include;$(SolutionDir)\3DEngine\AntTweakBar_115\AntTweakBar\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\3DEngine\GLEW\Lib;$(SolutionDir)\3DEngine\AntTweakBar_115\AntTweakBar\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)\3DEngine\SDL\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>AntTweakBar.lib;glew32.lib;glut32.lib;ffllapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL_Mixer.lib;SDL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="3DTeapot.h" />
+    <ClInclude Include="AABB.h" />
+    <ClInclude Include="Agent.h" />
+    <ClInclude Include="AgentGroup.h" />
+    <ClInclude Include="AIState.h" />
+    <ClInclude Include="AIDemoState.h" />
+    <ClInclude Include="Alignment.h" />
+    <ClInclude Include="Arrive.h" />
+    <ClInclude Include="AStar.h" />
+    <ClInclude Include="AudioDemoState.h" />
+    <ClInclude Include="Board.h" />
+    <ClInclude Include="BreadthFirstSearch.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="CameraController.h" />
+    <ClInclude Include="Cloth.h" />
+    <ClInclude Include="CollisionSphere.h" />
+    <ClInclude Include="Colour.h" />
+    <ClInclude Include="Constraint.h" />
+    <ClInclude Include="Crate.h" />
+    <ClInclude Include="DebugDraw.h" />
+    <ClInclude Include="DecimalToHex.h" />
+    <ClInclude Include="DepthFirstSearch.h" />
+    <ClInclude Include="DepthFirstSearchTest.h" />
+    <ClInclude Include="Dijkstra.h" />
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="FileHeaderReader.h" />
+    <ClInclude Include="Flee.h" />
+    <ClInclude Include="Frustum.h" />
+    <ClInclude Include="FuzzyLogicTestState.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObjectFactory.h" />
+    <ClInclude Include="GLShader.h" />
+    <ClInclude Include="GoalOrientedBehaviour.h" />
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="GraphEdge.h" />
+    <ClInclude Include="GraphNode.h" />
+    <ClInclude Include="GroupBehaviour.h" />
+    <ClInclude Include="HudUI.h" />
+    <ClInclude Include="IdleState.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="Joystick.h" />
+    <ClInclude Include="LineSeg3.h" />
+    <ClInclude Include="LossState.h" />
+    <ClInclude Include="MakeOctree.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="Mgc\MgcMath.h" />
+    <ClInclude Include="Mgc\MgcPlane.h" />
+    <ClInclude Include="Mgc\MgcRay3.h" />
+    <ClInclude Include="Mgc\mgcrtlib.h" />
+    <ClInclude Include="Mgc\MgcSegment3.h" />
+    <ClInclude Include="Mgc\MgcTriangle3.h" />
+    <ClInclude Include="Mgc\MgcVector3.h" />
+    <ClInclude Include="MiniMax.h" />
+    <ClInclude Include="Neignbor.h" />
+    <ClInclude Include="NetworkingDemoTestState.h" />
+    <ClInclude Include="NodePriorityQueue.h" />
+    <ClInclude Include="Npc.h" />
+    <ClInclude Include="OBB3.h" />
+    <ClInclude Include="ObjMesh.h" />
+    <ClInclude Include="ObjMeshFunction.h" />
+    <ClInclude Include="Octree.h" />
+    <ClInclude Include="Particle.h" />
+    <ClInclude Include="PhysicsDemoState.h" />
+    <ClInclude Include="Picking.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="PlayState.h" />
+    <ClInclude Include="PortSndAudioManager.h" />
+    <ClInclude Include="RedTeapot.h" />
+    <ClInclude Include="RidgidBodyGO.h" />
+    <ClInclude Include="Screen.h" />
+    <ClInclude Include="Search.h" />
+    <ClInclude Include="Seek.h" />
+    <ClInclude Include="Seperation.h" />
+    <ClInclude Include="SimpleCollisionSystem.h" />
+    <ClInclude Include="SmartPointer.h" />
+    <ClInclude Include="SoundFile.h" />
+    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="Box3D.h" />
+    <ClInclude Include="Billboard.h" />
+    <ClInclude Include="Capsule.h" />
+    <ClInclude Include="CollisionMesh.h" />
+    <ClInclude Include="CollisionSystem.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="EventPoller.h" />
+    <ClInclude Include="Exit.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="FontManager.h" />
+    <ClInclude Include="FPSCounter.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="MyGL.h" />
+    <ClInclude Include="Non-Copyable.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Report.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="SplashState.h" />
+    <ClInclude Include="Spring.h" />
+    <ClInclude Include="SteeringBehaviour.h" />
+    <ClInclude Include="SweepAndPrune.h" />
+    <ClInclude Include="TeaPot.h" />
+    <ClInclude Include="TestState.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TimeLine.h" />
+    <ClInclude Include="TimeLineKey.h" />
+    <ClInclude Include="TimeLineTest.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Tri.h" />
+    <ClInclude Include="Vec2.h" />
+    <ClInclude Include="Vec3.h" />
+    <ClInclude Include="Vec4.h" />
+    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="WinState.h" />
+    <ClInclude Include="ZombieShotgunner.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AABB.cpp" />
+    <ClCompile Include="AIDemoState.cpp" />
+    <ClCompile Include="AIWisdom.cpp" />
+    <ClCompile Include="AudioDemoState.cpp" />
+    <ClCompile Include="Billboard.cpp" />
+    <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Box3D.cpp" />
+    <ClCompile Include="CameraController.cpp" />
+    <ClCompile Include="Cloth.cpp" />
+    <ClCompile Include="CollisionMesh.cpp" />
+    <ClCompile Include="CollisionSphere.cpp" />
+    <ClCompile Include="CollisionSystem.cpp" />
+    <ClCompile Include="Crate.cpp" />
+    <ClCompile Include="DepthFirstSearchTest.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="EventPoller.cpp" />
+    <ClCompile Include="Exit.cpp" />
+    <ClCompile Include="Factory.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="FileHeaderReader.cpp" />
+    <ClCompile Include="FontManager.cpp" />
+    <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="FuzzyLogicTestState.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectFactory.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GLShader.cpp" />
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="HudUI.cpp" />
+    <ClCompile Include="IdleState.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="Joystick.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="LineSeg3.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="LossState.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MakeOctree.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Matix.cpp" />
+    <ClCompile Include="Mgc\MgcDistLin3Lin3.cpp" />
+    <ClCompile Include="Mgc\MgcDistLin3Tri3.cpp" />
+    <ClCompile Include="Mgc\MgcDistVec3Tri3.cpp" />
+    <ClCompile Include="Mgc\MgcMath.cpp" />
+    <ClCompile Include="Mgc\MgcPlane.cpp" />
+    <ClCompile Include="Mgc\MgcVector3.cpp" />
+    <ClCompile Include="NodePriorityQueue.cpp" />
+    <ClCompile Include="Npc.cpp" />
+    <ClCompile Include="OBB3.cpp" />
+    <ClCompile Include="ObjMesh.cpp" />
+    <ClCompile Include="ObjMeshFunction.cpp" />
+    <ClCompile Include="Octree.cpp" />
+    <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="PhysicsDemoState.cpp" />
+    <ClCompile Include="Plance.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayState.cpp" />
+    <ClCompile Include="PortSndAudioManager.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="RedTeapot.cpp" />
+    <ClCompile Include="Report.cpp" />
+    <ClCompile Include="RidgidBodyGO.cpp" />
+    <ClCompile Include="Room.cpp" />
+    <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="SimpleCollisionSystem.cpp" />
+    <ClCompile Include="SoundFile.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="SplashState.cpp" />
+    <ClCompile Include="Spring.cpp" />
+    <ClCompile Include="SweepAndPrune.cpp" />
+    <ClCompile Include="TestState.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TimeLine.cpp" />
+    <ClCompile Include="WinState.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="BulletCollision.lib" />
+    <Library Include="BulletDynamics.lib" />
+    <Library Include="BulletFileLoader.lib" />
+    <Library Include="BulletWorldImporter.lib" />
+    <Library Include="ffllapi.lib" />
+    <Library Include="glew32.lib" />
+    <Library Include="GlU32.Lib" />
+    <Library Include="glut32.lib" />
+    <Library Include="HACD.lib" />
+    <Library Include="libsndfile-1.lib" />
+    <Library Include="LinearMath.lib" />
+    <Library Include="MiniCL.lib" />
+    <Library Include="OpenGL32.Lib" />
+    <Library Include="OpenGLSupport.lib" />
+    <Library Include="portaudio_x86.lib" />
+    <Library Include="SDL.lib" />
+    <Library Include="SDL_image.lib" />
+    <Library Include="SDL_mixer.lib" />
+    <Library Include="SDL_net.lib" />
+    <Library Include="SDL_ttf.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClothPrototype.txt" />
+    <None Include="FuzzyLogic\aiwisdom.fcl" />
+    <None Include="Mgc\MgcLine3.inl" />
+    <None Include="Mgc\MgcPlane.inl" />
+    <None Include="Mgc\MgcRay3.inl" />
+    <None Include="Mgc\MgcSegment3.inl" />
+    <None Include="Mgc\MgcTriangle3.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Vertex Shader.vs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

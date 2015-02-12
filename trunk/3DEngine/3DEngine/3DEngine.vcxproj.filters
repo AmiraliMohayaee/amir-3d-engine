@@ -1,0 +1,770 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{260e2061-e672-4b44-a28a-a7405963d791}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GFX">
+      <UniqueIdentifier>{c2ba0a89-d4b1-40eb-ac12-9da7d1dfb9df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Assets">
+      <UniqueIdentifier>{6b3f7fd3-017e-4cfa-947c-b1733b187f38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths">
+      <UniqueIdentifier>{0484f189-b54b-4a86-8687-3f8280dd5090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GFX">
+      <UniqueIdentifier>{8c388c58-d1fe-4cd5-825b-34b736218eb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Assets">
+      <UniqueIdentifier>{c3b409ad-44b3-4c2c-8dd5-ccffba8c30c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resources">
+      <UniqueIdentifier>{9b9beadb-8431-4356-8eff-3c703f11d02a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{356b3574-26b9-4e95-a3a1-850ab104eb25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resources">
+      <UniqueIdentifier>{e4a1a3ee-84a8-43f4-859a-f588ce2b6071}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules">
+      <UniqueIdentifier>{25ca7e71-8b1f-4e21-9222-23be653d71cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\States">
+      <UniqueIdentifier>{c08aef86-0447-466f-8af9-d295adc4a0ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MgcDependency">
+      <UniqueIdentifier>{32951cc4-e47b-43a9-a2dd-ee065222341f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MgcDependency">
+      <UniqueIdentifier>{6b7cdb69-6e65-49c6-8efc-9d56d2ccf315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States">
+      <UniqueIdentifier>{c5818378-8a57-4e16-b599-d2d0d24a005e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TimeLine">
+      <UniqueIdentifier>{69896de1-6202-4ce1-bcdf-70c0f4cb7346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TimeLine">
+      <UniqueIdentifier>{b31a5e96-1145-4f3b-9945-4cf04ea037fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AI">
+      <UniqueIdentifier>{666aa3eb-6d91-4181-9abb-6ea21fb0add9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Physics">
+      <UniqueIdentifier>{fdbc3f6b-115f-4ad2-ad3a-75fd4bd39838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physics">
+      <UniqueIdentifier>{b31c99d0-8580-4751-88dc-ffc9a5cca784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AI">
+      <UniqueIdentifier>{127629ce-3606-48ec-a9d2-af8df220928e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AI\Agents and Behaviours">
+      <UniqueIdentifier>{c664fde4-3d26-46f1-ac34-b6060b231642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AI\Path Finding">
+      <UniqueIdentifier>{f2cd82e2-2735-401e-a745-2b011dc54bc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AI\Goal Oriented">
+      <UniqueIdentifier>{5d66e48c-2650-48ea-8597-e69b290863e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Audio">
+      <UniqueIdentifier>{f5c64bae-5bca-4128-b58c-588d515271a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AI\Finite State Machine">
+      <UniqueIdentifier>{fe03f3fd-6290-4522-ad72-e21453ace27b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AI\Pathfinding">
+      <UniqueIdentifier>{54730842-1f89-4ff8-8d0f-15b23a707dd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Audio">
+      <UniqueIdentifier>{5e5d66c9-417e-42b7-b526-ac1705029907}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Maths">
+      <UniqueIdentifier>{5ee25cd5-64cc-49f3-8024-465ef49ccd1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{7ca12cd6-0370-4219-877a-afd921f14537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Scripting">
+      <UniqueIdentifier>{779182ed-62db-4345-b450-25894d0fdd71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AI\Agent and Behaviour">
+      <UniqueIdentifier>{392d827c-b8ed-4603-831e-e3f9fe77d3ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Geometry">
+      <UniqueIdentifier>{c8a8b6bb-864d-41f0-a108-0c2b4df16f1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Geometry\Collision">
+      <UniqueIdentifier>{52103911-5a3f-4f96-89f0-80462df16b53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GFX\GLShader">
+      <UniqueIdentifier>{bc40ac2c-179d-4ce3-a3a4-dccea615f4fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GFX\GLShader">
+      <UniqueIdentifier>{4799d752-115a-4848-a9af-96ce095b3355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Maths\Geometry">
+      <UniqueIdentifier>{ebd68feb-4076-4c9c-ae31-92eaf61acd5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Maths\Geometry\Collision">
+      <UniqueIdentifier>{f5a1f676-3ec6-42d7-ba09-5d1d3b3d7d4a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyGL.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Non-Copyable.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2.h">
+      <Filter>Header Files\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec3.h">
+      <Filter>Header Files\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Report.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>Header Files\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionSystem.h">
+      <Filter>Header Files\Maths\Geometry\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMesh.h">
+      <Filter>Header Files\Maths\Geometry\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="EventPoller.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Billboard.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Exit.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="ZombieShotgunner.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Tri.h">
+      <Filter>Header Files\Maths\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="FPSCounter.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Capsule.h">
+      <Filter>Header Files\Maths\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMesh.h">
+      <Filter>Header Files\Maths\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="LineSeg3.h">
+      <Filter>Header Files\Maths\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleCollisionSystem.h">
+      <Filter>Header Files\Maths\Geometry\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectFactory.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="HudUI.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Joystick.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="LossState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="WinState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Mgc\MgcVector3.h">
+      <Filter>Header Files\MgcDependency</Filter>
+    </ClInclude>
+    <ClInclude Include="Mgc\MgcTriangle3.h">
+      <Filter>Header Files\MgcDependency</Filter>
+    </ClInclude>
+    <ClInclude Include="Mgc\MgcSegment3.h">
+      <Filter>Header Files\MgcDependency</Filter>
+    </ClInclude>
+    <ClInclude Include="Mgc\mgcrtlib.h">
+      <Filter>Header Files\MgcDependency</Filter>
+    </ClInclude>
+    <ClInclude Include="Mgc\MgcRay3.h">
+      <Filter>Header Files\MgcDependency</Filter>
+    </ClInclude>
+    <ClInclude Include="Mgc\MgcPlane.h">
+      <Filter>Header Files\MgcDependency</Filter>
+    </ClInclude>
+    <ClInclude Include="Mgc\MgcMath.h">
+      <Filter>Header Files\MgcDependency</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>Header Files\Maths\Geometry\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="SweepAndPrune.h">
+      <Filter>Header Files\Maths\Geometry\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeLine.h">
+      <Filter>Header Files\TimeLine</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeLineKey.h">
+      <Filter>Header Files\TimeLine</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeshFunction.h">
+      <Filter>Header Files\Maths\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Spring.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsDemoState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Constraint.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Cloth.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="FuzzyLogicTestState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIDemoState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkingDemoTestState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioDemoState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Agent.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="AgentGroup.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Alignment.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrive.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Flee.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="GroupBehaviour.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Neignbor.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Search.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Seek.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Seperation.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviour.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="GoalOrientedBehaviour.h">
+      <Filter>Header Files\AI\Goal Oriented</Filter>
+    </ClInclude>
+    <ClInclude Include="AStar.h">
+      <Filter>Header Files\AI\Path Finding</Filter>
+    </ClInclude>
+    <ClInclude Include="BreadthFirstSearch.h">
+      <Filter>Header Files\AI\Path Finding</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthFirstSearch.h">
+      <Filter>Header Files\AI\Path Finding</Filter>
+    </ClInclude>
+    <ClInclude Include="Dijkstra.h">
+      <Filter>Header Files\AI\Path Finding</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files\AI\Path Finding</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphEdge.h">
+      <Filter>Header Files\AI\Path Finding</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphNode.h">
+      <Filter>Header Files\AI\Path Finding</Filter>
+    </ClInclude>
+    <ClInclude Include="NodePriorityQueue.h">
+      <Filter>Header Files\AI\Path Finding</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Header Files\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Header Files\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="SmartPointer.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="AIState.h">
+      <Filter>Header Files\AI\Finite State Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleState.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Npc.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="RedTeapot.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniMax.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="TeaPot.h">
+      <Filter>Header Files\AI\Agents and Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthFirstSearchTest.h">
+      <Filter>Header Files\AI\Path Finding</Filter>
+    </ClInclude>
+    <ClInclude Include="PortSndAudioManager.h">
+      <Filter>Header Files\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundFile.h">
+      <Filter>Header Files\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="FileHeaderReader.h">
+      <Filter>Header Files\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDraw.h">
+      <Filter>Header Files\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="TestState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Crate.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeLineTest.h">
+      <Filter>Header Files\TimeLine</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Header Files\Maths\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionSphere.h">
+      <Filter>Header Files\Maths\Geometry\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GLShader.h">
+      <Filter>Header Files\GFX\GLShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Octree.h">
+      <Filter>Header Files\Maths\Geometry\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Colour.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="MakeOctree.h">
+      <Filter>Header Files\Maths\Geometry\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Box3D.h">
+      <Filter>Header Files\Maths\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Header Files\Maths\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
+      <Filter>Header Files\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="3DTeapot.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Picking.h">
+      <Filter>Header Files\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec4.h">
+      <Filter>Header Files\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraController.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="RidgidBodyGO.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="OBB3.h">
+      <Filter>Header Files\Maths\Geometry\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="DecimalToHex.h">
+      <Filter>Header Files\Maths</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Log.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="Mgc\MgcVector3.cpp">
+      <Filter>Source Files\MgcDependency</Filter>
+    </ClCompile>
+    <ClCompile Include="Mgc\MgcPlane.cpp">
+      <Filter>Source Files\MgcDependency</Filter>
+    </ClCompile>
+    <ClCompile Include="Mgc\MgcMath.cpp">
+      <Filter>Source Files\MgcDependency</Filter>
+    </ClCompile>
+    <ClCompile Include="Mgc\MgcDistVec3Tri3.cpp">
+      <Filter>Source Files\MgcDependency</Filter>
+    </ClCompile>
+    <ClCompile Include="Mgc\MgcDistLin3Tri3.cpp">
+      <Filter>Source Files\MgcDependency</Filter>
+    </ClCompile>
+    <ClCompile Include="Mgc\MgcDistLin3Lin3.cpp">
+      <Filter>Source Files\MgcDependency</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Billboard.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Exit.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="AABB.cpp">
+      <Filter>Source Files\Maths\Geometry\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMesh.cpp">
+      <Filter>Source Files\Maths\Geometry\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionSystem.cpp">
+      <Filter>Source Files\Maths\Geometry\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="SweepAndPrune.cpp">
+      <Filter>Source Files\Maths\Geometry\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="EventPoller.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Joystick.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="LineSeg3.cpp">
+      <Filter>Source Files\Maths\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMesh.cpp">
+      <Filter>Source Files\Maths\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeshFunction.cpp">
+      <Filter>Source Files\Maths\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="LossState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="WinState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Factory.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="HudUI.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Report.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleCollisionSystem.cpp">
+      <Filter>Source Files\Maths\Geometry\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="FontManager.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectFactory.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Spring.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsDemoState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLogicTestState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIWisdom.cpp">
+      <Filter>Source Files\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="AIDemoState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files\AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="NodePriorityQueue.cpp">
+      <Filter>Source Files\AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>Source Files\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Cloth.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>Source Files\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Matix.cpp">
+      <Filter>Source Files\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Npc.cpp">
+      <Filter>Source Files\AI\Agent and Behaviour</Filter>
+    </ClCompile>
+    <ClCompile Include="RedTeapot.cpp">
+      <Filter>Source Files\AI\Agent and Behaviour</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleState.cpp">
+      <Filter>Source Files\AI\Agent and Behaviour</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Source Files\AI\Agent and Behaviour</Filter>
+    </ClCompile>
+    <ClCompile Include="PortSndAudioManager.cpp">
+      <Filter>Source Files\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundFile.cpp">
+      <Filter>Source Files\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthFirstSearchTest.cpp">
+      <Filter>Source Files\AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioDemoState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="FileHeaderReader.cpp">
+      <Filter>Source Files\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="TestState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Crate.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeLine.cpp">
+      <Filter>Source Files\TimeLine</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionSphere.cpp">
+      <Filter>Source Files\Maths\Geometry\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="GLShader.cpp">
+      <Filter>Source Files\GFX\GLShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Octree.cpp">
+      <Filter>Source Files\Maths\Geometry\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeOctree.cpp">
+      <Filter>Source Files\Maths\Geometry\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Box3D.cpp">
+      <Filter>Source Files\Maths\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Plance.cpp">
+      <Filter>Source Files\Maths\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Frustum.cpp">
+      <Filter>Source Files\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraController.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="RidgidBodyGO.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="OBB3.cpp">
+      <Filter>Source Files\Maths\Geometry\Collision</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SDL_image.lib" />
+    <Library Include="SDL_mixer.lib" />
+    <Library Include="SDL_ttf.lib" />
+    <Library Include="SDL.lib" />
+    <Library Include="OpenGL32.Lib" />
+    <Library Include="glut32.lib" />
+    <Library Include="GlU32.Lib" />
+    <Library Include="glew32.lib" />
+    <Library Include="OpenGLSupport.lib" />
+    <Library Include="MiniCL.lib" />
+    <Library Include="LinearMath.lib" />
+    <Library Include="HACD.lib" />
+    <Library Include="BulletWorldImporter.lib" />
+    <Library Include="BulletFileLoader.lib" />
+    <Library Include="BulletDynamics.lib" />
+    <Library Include="BulletCollision.lib" />
+    <Library Include="ffllapi.lib" />
+    <Library Include="SDL_net.lib" />
+    <Library Include="portaudio_x86.lib" />
+    <Library Include="libsndfile-1.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Mgc\MgcTriangle3.inl">
+      <Filter>Header Files\MgcDependency</Filter>
+    </None>
+    <None Include="Mgc\MgcSegment3.inl">
+      <Filter>Header Files\MgcDependency</Filter>
+    </None>
+    <None Include="Mgc\MgcRay3.inl">
+      <Filter>Header Files\MgcDependency</Filter>
+    </None>
+    <None Include="Mgc\MgcPlane.inl">
+      <Filter>Header Files\MgcDependency</Filter>
+    </None>
+    <None Include="Mgc\MgcLine3.inl">
+      <Filter>Header Files\MgcDependency</Filter>
+    </None>
+    <None Include="FuzzyLogic\aiwisdom.fcl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ClothPrototype.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Vertex Shader.vs">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
