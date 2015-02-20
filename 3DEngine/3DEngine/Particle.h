@@ -13,17 +13,15 @@ namespace Engine
 	class Particle
 	{
 	public:
-		enum ROWS { NUMROWS, NUMCOLUMS };
-
+		
 		Particle();
 		Particle(Vec3f pos) : m_pos(pos), m_oldPos(pos), m_bMovable(true) {} 
 		Particle(float invmass) : m_invMass(invmass) {}
 
 
-		bool Movable(); // Boolean for checking if object is movable or not
+		bool Movable(); // Checking if object is movable or not
 
 		void DrawGL();
-		void DrawDX();
 
 		void Update();
 		void UpdateEuler();
@@ -38,9 +36,10 @@ namespace Engine
 		void PosOffset(const Vec3f& offset);
 		void MakeUnmovable();
 		
-		// Not used at the moment
-		const void AddToNormal(Vec3f& normal);
-		Vec3f& GetNormal(); // vector normal not unit length
+		// Not used at the moment as parameters are only for OpenGL softshading
+		// To aquire particle normal for collision
+		const void AddToNormal(Vec3f& normal);	
+		Vec3f& GetNormal(); // not unit length vector
 		void ResetNormal();
 
 	private:
@@ -54,11 +53,16 @@ namespace Engine
 		Vec3f m_oldPos;
 		Vec3f m_pos;
 
+		bool m_bMovable; // Checking if a particle is movable or not
+		
 		// These variables were suggested by Jesper Mosegaard
 		Vec3f m_accumulatedNormal; // Accumulated normal used for OpenGL soft shading
-		bool m_bMovable; // Checking if a particle is movable or not
 	};
 }
 
 
 #endif
+
+
+// Unused code
+// enum ROWS { NUMROWS, NUMCOLUMS };
