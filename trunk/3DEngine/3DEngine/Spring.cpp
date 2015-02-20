@@ -77,7 +77,7 @@ namespace Engine
 		// Damping
 		// enforcing min and maxlengths and clamping
 		if (diffLen > m_maxLength)
-		{			
+		{
 			//float extra = diffLen - m_maxLength;
 			//Vec3f newLength = diff * (extra/2);
 

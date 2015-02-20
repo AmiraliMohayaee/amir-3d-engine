@@ -14,12 +14,6 @@ TwBar *bar;
 
 namespace Engine
 {
-	float ball_time = 0; // counter for used to calculate the z position of the ball
-
-	//Cloth cloth1(14,10,55,45); // one Cloth object of the Cloth class
-	Vec3f ball_pos(7.0,-5.0,0.0); // the center of our one ball
-	float ball_radius = 2; // the radius of our one ball used for collision detection
-
 	void PhysicsDemoState::OnActivated()
 	{
 		GameState::OnActivated();
@@ -80,24 +74,8 @@ namespace Engine
 			//TheSoundManager::Instance()->PlayMusic("crab_nicholso.mp3");
 		}
 
-		// Moving the Ball
-		ball_time++;
-		ball_pos.z = cos(ball_time / 50.0) * 7;
-
-
 		// drawing
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-		//glColor3f(0.8f ,0.8f ,1.0f);
-		//glVertex3f(-200.0f,-100.0f,-100.0f);
-		//glVertex3f(200.0f,-100.0f,-100.0f);
-		//glColor3f(0.4f,0.4f,0.8f);	
-		//glVertex3f(200.0f,100.0f,-100.0f);
-		//glVertex3f(-200.0f,100.0f,-100.0f);
-		glEnd();
-		glEnable(GL_LIGHTING);
 
 
 		glMatrixMode(GL_PROJECTION);
@@ -117,22 +95,7 @@ namespace Engine
 
 		glTranslatef(-6.5,6,-9.0f); // centering the camera to the cloth object
 		glRotatef(25,0,1,0); // rotate a bit to see the cloth from the side
-		//cloth1.drawShaded(); // finally draw the cloth with smooth shading
 
-		//glPushMatrix(); // to draw the ball we use glutSolidSphere, and need to draw the sphere at the position of the ball
-		//glTranslatef(ball_pos.x,ball_pos.y,ball_pos.z); // hence the translation of the sphere onto the ball position
-		//glColor3f(0.4f,0.8f,0.5f);
-		//glutSolidSphere(ball_radius-0.1,50,50); // draw the ball, but with a slightly lower radius, otherwise we could get ugly visual artifacts of cloth penetrating the ball slightly
-		//glPopMatrix();
-
-
-		//glDisable(GL_LIGHTING);
-
-
-		//glMatrixMode(GL_PROJECTION);
-		//glLoadIdentity();
-		//glMatrixMode(GL_MODELVIEW);
-		//glLoadIdentity();
 	}
 
 	void PhysicsDemoState::Update()
@@ -152,15 +115,14 @@ namespace Engine
 		{
 
 		}
-
-		// Simple state transition using keyboard input
-		//if (k.keysym.sym == SDLK_SPACE &&  k.state == SDL_PRESSED)
-		//{
-		//	TheGame::Instance()->SetGameState(ThePlayState::Instance());
-		//	TheGame::Instance()->Run();
-		//}
 	}
 }
+
+
+
+
+
+
 
 // Early example of a setting up two particles and and assigning a spring to both
 // These are left here for the purpose of referencing 
@@ -176,3 +138,51 @@ namespace Engine
 	/*spring.SetParticles(&immovable, &movable);
 	spring.SetNaturalLength(1.0f);
 	spring.SetKVal(1.0f);*/
+
+
+	//float ball_time = 0; // counter for used to calculate the z position of the ball
+
+	////Cloth cloth1(14,10,55,45); // one Cloth object of the Cloth class
+	//Vec3f ball_pos(7.0,-5.0,0.0); // the center of our one ball
+	//float ball_radius = 2; // the radius of our one ball used for collision detection
+
+		// Moving the Ball
+		//ball_time++;
+		//ball_pos.z = cos(ball_time / 50.0) * 7;
+
+
+		//cloth1.drawShaded(); // finally draw the cloth with smooth shading
+
+		//glPushMatrix(); // to draw the ball we use glutSolidSphere, and need to draw the sphere at the position of the ball
+		//glTranslatef(ball_pos.x,ball_pos.y,ball_pos.z); // hence the translation of the sphere onto the ball position
+		//glColor3f(0.4f,0.8f,0.5f);
+		//glutSolidSphere(ball_radius-0.1,50,50); // draw the ball, but with a slightly lower radius, otherwise we could get ugly visual artifacts of cloth penetrating the ball slightly
+		//glPopMatrix();
+
+
+		//glDisable(GL_LIGHTING);
+
+
+		//glMatrixMode(GL_PROJECTION);
+		//glLoadIdentity();
+		//glMatrixMode(GL_MODELVIEW);
+		//glLoadIdentity();
+
+
+		// Simple state transition using keyboard input
+		//if (k.keysym.sym == SDLK_SPACE &&  k.state == SDL_PRESSED)
+		//{
+		//	TheGame::Instance()->SetGameState(ThePlayState::Instance());
+		//	TheGame::Instance()->Run();
+		//}
+
+		//glDisable(GL_LIGHTING);
+		//glBegin(GL_POLYGON);
+		////glColor3f(0.8f ,0.8f ,1.0f);
+		////glVertex3f(-200.0f,-100.0f,-100.0f);
+		////glVertex3f(200.0f,-100.0f,-100.0f);
+		////glColor3f(0.4f,0.4f,0.8f);	
+		////glVertex3f(200.0f,100.0f,-100.0f);
+		////glVertex3f(-200.0f,100.0f,-100.0f);
+		//glEnd();
+		//glEnable(GL_LIGHTING);
