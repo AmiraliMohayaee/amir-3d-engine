@@ -1,6 +1,8 @@
 #ifndef SPRING_H_INCLUDED
 #define SPRING_H_INCLUDED
 
+#include "Vec3.h"
+
 
 namespace Engine
 {
@@ -43,6 +45,16 @@ namespace Engine
 		float m_minLength;
 		float m_maxLength;
 		Particle* m_particles[2];
+
+
+		Vec3f m_diff;	// Vector between two particles
+		float m_diffLen;	// Length between two particles
+		Vec3f m_centrePoint;	// Centre point between two particles
+
+		// Length vectors either pointing towards or away
+		Vec3f m_newLengthPositive;
+		Vec3f m_newLengthNegative;
+		Vec3f m_force;	// Stores the force being applied to a particle
 	};
 }
 

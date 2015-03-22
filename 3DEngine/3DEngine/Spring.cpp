@@ -31,27 +31,26 @@ namespace Engine
 		glEnd();
 	}
 
+	// Initializing both particles
 	void Spring::SetParticles(Particle* p1, Particle* p2)
 	{
 		m_particles[0] = p1;
 		m_particles[1] = p2;
-	}
 
-	void Spring::Update()
-	{
 		// Checking for particles
-		assert(m_particles[0]);
+		assert(m_particles[0]);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 		assert(m_particles[1]);
 
 		// Get vector between points
-		Vec3f diff = 
+		m_diff = 
 			m_particles[1]->GetPos() -
 			m_particles[0]->GetPos();
 
 		// Get difference between dist and natural length = x
 		// (clamp x ?)
-		float diffLen = diff.Length();
-		float x = diffLen - m_naturalLength;
+		float m_diffLen = m_diff.Length();
+		m_diffLen = m_naturalLength;
+		float x = m_diffLen - m_naturalLength;
 		//if (fabs(diffLen) < 0.0001f)	// fabs function returns absolute value of a float
 		//{
 		//	return;
@@ -62,21 +61,24 @@ namespace Engine
 		}
 
 		// Hooke's Law; F = -k x
-		diff.Normalize();	// Normalizing the vector before doing elasticity check
-		Vec3f force = diff * (-m_kValue * x);
+		//diff.Normalize();	// Normalizing the vector before doing elasticity check
+		m_force = m_diff * (-m_kValue * x);
 
 		// Vector centrepoint
 		//Vec3f CentrPoint = ((m_particles[0]->GetPos() - m_particles[1]->GetPos()) * 0.5f); 
-		Vec3f centrePoint = (diff * (diffLen * 0.5));
+		m_centrePoint = (m_diff * (m_diffLen * 0.5));
 
 		// New length vectors pointing towards and away
-		Vec3f newLengthPositive = diff * (m_maxLength * 0.5);
-		Vec3f newLengthNegative = diff * -(m_maxLength * 0.5);
-		
-		
+		m_newLengthPositive = m_diff * (m_maxLength * 0.5);
+		m_newLengthNegative = m_diff * -(m_maxLength * 0.5);
+	}
+
+	// Updating both particles
+	void Spring::Update()
+	{
 		// Damping
 		// enforcing min and maxlengths and clamping
-		if (diffLen > m_maxLength)
+		if (m_diffLen > m_maxLength)
 		{
 			//float extra = diffLen - m_maxLength;
 			//Vec3f newLength = diff * (extra/2);
@@ -87,7 +89,7 @@ namespace Engine
 			// if (particle  is movable)
 			// diff = (maxlength - (particle0 - particle 1)
 			// same as above for minlength, except in negative distance
-
+			
 
 			// Both movable
 			if (m_particles[0]->Movable() && m_particles[1]->Movable())
@@ -95,8 +97,8 @@ namespace Engine
 				std::cout << "Checking maxlength. Both objects are movable, offsetting position of "<<
 					 "both particles.\n";
 
-				m_particles[0]->SetPos(centrePoint - (newLengthNegative));
-				m_particles[1]->SetPos(centrePoint + (newLengthPositive));
+				m_particles[0]->SetPos(m_centrePoint - (m_newLengthNegative));
+				m_particles[1]->SetPos(m_centrePoint + (m_newLengthPositive));
 
 				// Pos Offsetting for some testing
 				//m_particles[0]->PosOffset(-newLength);
@@ -112,19 +114,19 @@ namespace Engine
 			else if (m_particles[0]->Movable() && !m_particles[1]->Movable())
 			{
 				std::cout << "Checking Maxlength. Only the first prticle is movable.\n";
-				m_particles[0]->SetPos(m_particles[1]->GetPos() - (diff * m_maxLength));
+				m_particles[0]->SetPos(m_particles[1]->GetPos() - (m_diff * m_maxLength));
 			}
 			else
 			{
 				//m_particles[1]->PosOffset(diff * extra);
 				std::cout << "Checking Maxlength. Only the second prticle is movable.\n";
-				m_particles[1]->SetPos(m_particles[0]->GetPos() - (-diff * m_maxLength));
+				m_particles[1]->SetPos(m_particles[0]->GetPos() - (-m_diff * m_maxLength));
 			}
 		}
-		else if (diffLen < m_minLength)
+		else if (m_diffLen < m_minLength)
 		{
-			float extra = diffLen - m_maxLength;
-			Vec3f newLength = diff * (extra/2);
+			float extra = m_diffLen - m_maxLength;
+			Vec3f newLength = m_diff * (extra/2);
 
 			// Both movable
 			if (m_particles[0]->Movable() && m_particles[1]->Movable())
@@ -133,8 +135,8 @@ namespace Engine
 				// Damping
 				//Vec3f CentrPoint = ((m_particles[0]->GetPos() - m_particles[1]->GetPos()) * 0.5f); 
 
-				m_particles[0]->SetPos(centrePoint - (diff * (m_minLength * 0.5f)));
-				m_particles[1]->SetPos(centrePoint + (diff * (m_minLength * 0.5f)));
+				m_particles[0]->SetPos(m_centrePoint - (m_diff * (m_minLength * 0.5f)));
+				m_particles[1]->SetPos(m_centrePoint + (m_diff * (m_minLength * 0.5f)));
 
 				
 				// Pos Offsetting for some testing
@@ -152,12 +154,12 @@ namespace Engine
 			else if (m_particles[0]->Movable() && !m_particles[1]->Movable())
 			{
 				std::cout << "Checking minlength. Only one prticle is movable.\n";
-				m_particles[0]->SetPos(m_particles[1]->GetPos() - (diff * m_minLength));
+				m_particles[0]->SetPos(m_particles[1]->GetPos() - (m_diff * m_minLength));
 			}
 			else
 			{
 				//m_particles[1]->PosOffset(diff * extra);
-				m_particles[1]->SetPos(m_particles[0]->GetPos() - (-diff * m_minLength));
+				m_particles[1]->SetPos(m_particles[0]->GetPos() - (-m_diff * m_minLength));
 			}
 		}
 		// If within min and max and not within natural length, simple apply forces
@@ -165,8 +167,8 @@ namespace Engine
 		{
 			// Apply force to both particles at each end
 			std::cout << "No min or max condition met. Applying forces.\n\n";
-			m_particles[0]->AddForce(force);
-			m_particles[1]->AddForce(-force);
+			m_particles[0]->AddForce(m_force);
+			m_particles[1]->AddForce(-m_force);
 		}
 	}
 

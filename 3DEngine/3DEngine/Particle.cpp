@@ -20,11 +20,15 @@ namespace Engine
 		Vec3f m_oldVel = m_vel;
 
 		m_vel += m_acceleration * dt;
-		m_vel *= 0.9999f;
+		////m_vel *= 0.9999f;
 
 		// Average Vel multiplied by DT
 		m_pos += 
 			(m_oldVel + m_vel) * dt * 0.5f;
+
+		std::cout << "Particle x position is at " << m_pos.x << " .\n";
+		std::cout << "Particle y position is at " << m_pos.y << " .\n";
+		std::cout << "Particle z position is at " << m_pos.z << " .\n";
 	}
 
 	void Particle::UpdateVerlet()
@@ -51,7 +55,7 @@ namespace Engine
 		static const Vec3f GRAVITY(0, -0.5f, 0);
 
 		m_forces += GRAVITY;
-		m_acceleration = m_forces * m_invMass;
+		//m_acceleration = m_forces * m_invMass;
 
 		//if(m_invMass > 0)
 		//{
@@ -70,6 +74,7 @@ namespace Engine
 	void Particle::AddForce(Vec3f f)
 	{
 		m_forces += f;
+		//m_acceleration += f / m_mass;
 	}
 
 	void Particle::SetInvMass(float invMass)
@@ -139,6 +144,11 @@ namespace Engine
 	Vec3f& Particle::GetNormal()
 	{ 
 		return m_accumulatedNormal;
+	}
+
+	float& Particle::GetInvMass()
+	{
+		return m_invMass;
 	}
 
 	void Particle::ResetNormal() 

@@ -40,6 +40,7 @@ namespace Engine
 		// To aquire particle normal for collision
 		const void AddToNormal(Vec3f& normal);	
 		Vec3f& GetNormal(); // not unit length vector
+		float& GetInvMass();
 		void ResetNormal();
 
 	private:

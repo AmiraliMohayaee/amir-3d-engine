@@ -24,7 +24,7 @@
 #include "MyGL.h"
 #include <AntTweakBar.h>
 
-
+// Undefining SDL's default main
 #undef main
 
 // 1.1/1.2 GL Shader initialization
@@ -63,11 +63,11 @@ int main(int argc, char** argv)
 		 exit(0);
 	 }
 
-	// Initialize AntTweakBar
+	// Initialize AntTweakBar for use with OpenGL and SDL
     TwInit(TW_OPENGL, NULL);
 
-	// Tell the window size to AntTweakBar
-    TwWindowSize(width, height);
+	// Tell the window size to AntTweakBar and its own dimentions
+    TwWindowSize(400, 300);
 
 	//Setting Windows caption
 	SDL_WM_SetCaption("Demo", NULL);

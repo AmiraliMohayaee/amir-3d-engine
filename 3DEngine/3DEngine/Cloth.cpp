@@ -60,7 +60,7 @@ namespace Engine
 		m_particles = ColumnVec(columns, RowVec(rows, Particle()));
 
 		// The rows in the RowVec are aligned on the x-axis and the 
-		// columns in the ColumnVec on th ey-axis
+		// columns in the ColumnVec on the y-axis
 
 		// Making a lattice 
 		for (unsigned int r = 0; r < rows; r++)

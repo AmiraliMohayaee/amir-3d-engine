@@ -28,10 +28,10 @@ namespace Engine
 		//FontManager text;
 		//GLuint texId;
 
-		Particle immovable;
-		Particle movable;
-		Spring spring; 
-		Cloth cloth;
+		Particle m_partImmovable;
+		Particle m_partMovable;
+		Spring m_spring;
+		Cloth m_cloth;
 	};
 
 	typedef Singleton<PhysicsDemoState> ThePhysicsDemoState;

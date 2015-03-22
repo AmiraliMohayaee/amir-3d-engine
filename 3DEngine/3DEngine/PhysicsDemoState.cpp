@@ -12,21 +12,69 @@
 
 TwBar *bar;
 
+float kval;
+float minval;
+float maxval;
+float naturallength;
+float invmass;
+//const Vec3f setpos();
+
 namespace Engine
 {
 	void PhysicsDemoState::OnActivated()
 	{
 		GameState::OnActivated();
 
-		bar = TwNewBar("TweakBArTest");
+		bar = TwNewBar("TweakBar");
+		TwDefine(" GLOBAL help='AntTweakBar used for changing parameters.\n' ");
+
+		//TwAddVarRW(bar, "InverseMass", TW_TYPE_FLOAT, 
+		//	&invmass,
+		//	" min=0 max=1000 group=Particle label='Inverse Mass' ");
+
+		//TwAddVarRW(bar, "KValue", TW_TYPE_FLOAT, 
+		//	&kval,
+		//	" min=0 max=1000 group=Particle label='K Value' ");
+
+		//TwAddVarRW(bar, "MinimumLength", TW_TYPE_FLOAT, 
+		//	&minval,
+		//	" min=0 max=1000 group=Particle label='Minimum Length' ");
+
+		//TwAddVarRW(bar, "MaximumLength", TW_TYPE_FLOAT, 
+		//	&maxval,
+		//	" min=0 max=1000 group=Particle label='Maximum Length' ");
+
+		//TwAddVarRW(bar, "NaturalLength", TW_TYPE_FLOAT, 
+		//	&naturallength,
+		//	" min=0 max=1000 group=Particle label='Natural Length' ");
+
+
+
+		// Testing Spring and particles
+		m_partImmovable.SetPos(Vec3f(0, 0, 0));
+		m_partMovable.SetPos(Vec3f(0, -3, 0));
+		m_partMovable.Movable();
+
+		kval = 0.0001;
+		minval = 2.8;
+		maxval = 3.2;
+		invmass = 10;
+
+		m_partMovable.SetInvMass(invmass);
+
+
+		m_spring.SetParticles(&m_partImmovable, &m_partMovable);
+
 
 		// Previous version of setting up the cloth 
 		//cloth.SetClothVals(0.6, 0.0, 2.0, 1.0);
 		//cloth.CreateLattice(5, 5);
 
 		// Initializing the lattice 
-		cloth.Initialize(0.001f, 0.9f, 1.2f, 1.0f, 3, 3, 100.0f);
+		//cloth.Initialize(0.001f, 0.9f, 1.2f, 1.0f, 3, 3, 100.0f);
 
+
+		// Setting up GL lighting
 		glShadeModel(GL_SMOOTH);
 		glClearColor(0.2f, 0.2f, 0.4f, 0.5f);
 		glClearDepth(1.0f);
@@ -89,31 +137,40 @@ namespace Engine
 
 		gluLookAt(0, 3, 15, 0, 0, 0, 0, 1, 0);
 
-	
-		cloth.DrawLattice();
+		// Testing
+		m_partImmovable.DrawGL();
+		m_partMovable.DrawGL();
+		m_spring.Draw();
 
+		//m_cloth.DrawLattice();		// Creating Lattice
+		TwDraw();		// Drawing AnTweakBar
 
 		glTranslatef(-6.5,6,-9.0f); // centering the camera to the cloth object
 		glRotatef(25,0,1,0); // rotate a bit to see the cloth from the side
-
 	}
 
 	void PhysicsDemoState::Update()
 	{
-		cloth.Update();
+		//m_partImmovable.Update();
+		m_partMovable.Update();
+		//m_partMovable.AddForce(Vec3f(1, 0, 0));
+		m_spring.Update();
+
+		//m_cloth.Update();
 	}
 
 	void PhysicsDemoState::OnKeyboardEvent(const SDL_KeyboardEvent& k)
 	{
 		if (k.keysym.sym == SDLK_ESCAPE &&  k.state == SDL_PRESSED)
 		{
+			TwTerminate();
 			SDL_Quit();
 			exit(0);
 		}
 
 		if (k.keysym.sym == SDLK_w && k.state == SDL_PRESSED)
 		{
-
+			m_partMovable.AddForce(Vec3f(1, 0, 0));
 		}
 	}
 }
