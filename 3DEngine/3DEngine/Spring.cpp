@@ -41,28 +41,12 @@ namespace Engine
 		assert(m_particles[0]);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 		assert(m_particles[1]);
 
-		// Get vector between points
 		m_diff = 
 			m_particles[1]->GetPos() -
 			m_particles[0]->GetPos();
 
-		// Get difference between dist and natural length = x
-		// (clamp x ?)
 		float m_diffLen = m_diff.Length();
-		m_diffLen = m_naturalLength;
-		float x = m_diffLen - m_naturalLength;
-		//if (fabs(diffLen) < 0.0001f)	// fabs function returns absolute value of a float
-		//{
-		//	return;
-		//}
-		if ((x < 0.01f) && (x > -0.01f))
-		{
-			return; 
-		}
-
-		// Hooke's Law; F = -k x
-		//diff.Normalize();	// Normalizing the vector before doing elasticity check
-		m_force = m_diff * (-m_kValue * x);
+		m_naturalLength = m_diffLen;
 
 		// Vector centrepoint
 		//Vec3f CentrPoint = ((m_particles[0]->GetPos() - m_particles[1]->GetPos()) * 0.5f); 
@@ -73,9 +57,48 @@ namespace Engine
 		m_newLengthNegative = m_diff * -(m_maxLength * 0.5);
 	}
 
+	void Spring::CalcRestoring()
+	{
+		// Get vector between points
+		m_diff = 
+			m_particles[0]->GetPos() -
+			m_particles[1]->GetPos();	
+		// The order which the vector is aquired is important otherwise
+		// strange negative values not conforming to hook's formula may appear
+		
+		float m_diffLen = m_diff.Length();
+		float x = m_diffLen - m_naturalLength;
+
+		std::cout << "Cloth natural length is " << m_naturalLength << " .\n";
+
+				// Get difference between dist and natural length = x
+		// (clamp x ?)
+		//if (fabs(diffLen) < 0.0001f)	// fabs function returns absolute value of a float
+		//{
+		//	return;
+		//}
+		//if ((x < 0.01f) && (x > -0.01f))
+		//{
+		//	std::cout << "Could not determine delta length.\n";
+		//	return; 
+		//}
+
+		// Hooke's Law; F = -k x
+		m_diff.Normalize();	// Normalizing the vector before doing elasticity check
+		m_force = m_diff * ( -m_kValue * x );	// multiplying the float values of K and Dleta L by a Vector
+
+		std::cout << "The delta length value is" << x << ".\n";
+		std::cout << "The spring force value is" << m_force.y << ".\n";
+	}
+
 	// Updating both particles
 	void Spring::Update()
 	{
+		//std::cout << "Spring natural length is " << m_naturalLength << " .\n";
+		//std::cout << "Current particle 1 force is " << m_particles[0]->GetForce() << ".\n";
+		
+		CalcRestoring();
+		
 		// Damping
 		// enforcing min and maxlengths and clamping
 		if (m_diffLen > m_maxLength)
@@ -83,13 +106,11 @@ namespace Engine
 			//float extra = diffLen - m_maxLength;
 			//Vec3f newLength = diff * (extra/2);
 
-			
 			// checking if particle is immovable or not
 			// decreasing the length if it goes above maxlength and if movable
 			// if (particle  is movable)
 			// diff = (maxlength - (particle0 - particle 1)
 			// same as above for minlength, except in negative distance
-			
 
 			// Both movable
 			if (m_particles[0]->Movable() && m_particles[1]->Movable())
@@ -125,8 +146,8 @@ namespace Engine
 		}
 		else if (m_diffLen < m_minLength)
 		{
-			float extra = m_diffLen - m_maxLength;
-			Vec3f newLength = m_diff * (extra/2);
+			//float extra = m_diffLen - m_maxLength;
+			//Vec3f newLength = m_diff * (extra/2);
 
 			// Both movable
 			if (m_particles[0]->Movable() && m_particles[1]->Movable())
@@ -166,7 +187,7 @@ namespace Engine
 		else
 		{
 			// Apply force to both particles at each end
-			std::cout << "No min or max condition met. Applying forces.\n\n";
+			//std::cout << "No min or max condition met. Applying forces.\n\n";
 			m_particles[0]->AddForce(m_force);
 			m_particles[1]->AddForce(-m_force);
 		}
@@ -185,7 +206,6 @@ namespace Engine
 		m_maxLength = max;
 	}
 
-	// Default 1.0
 	void Spring::SetNaturalLength(float naturalLength)
 	{
 		m_naturalLength = naturalLength;
@@ -211,12 +231,12 @@ namespace Engine
 		return m_naturalLength;
 	}
 
-	void SetMovable()
+	void Spring::SetMovable()
 	{
 		
 	}
 
-	void SetImmovable()
+	void Spring::SetImmovable()
 	{
 
 	}

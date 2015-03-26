@@ -55,13 +55,13 @@ namespace Engine
 		m_partMovable.SetPos(Vec3f(0, -3, 0));
 		m_partMovable.Movable();
 
-		kval = 0.0001;
+		kval = 0.0001f;
 		minval = 2.8;
 		maxval = 3.2;
-		invmass = 10;
+		invmass = 10000000;
 
+		m_spring.SetKVal(kval);
 		m_partMovable.SetInvMass(invmass);
-
 
 		m_spring.SetParticles(&m_partImmovable, &m_partMovable);
 
@@ -71,7 +71,7 @@ namespace Engine
 		//cloth.CreateLattice(5, 5);
 
 		// Initializing the lattice 
-		//cloth.Initialize(0.001f, 0.9f, 1.2f, 1.0f, 3, 3, 100.0f);
+		//m_cloth.Initialize(1.0f, 0.7f, 1.3f, 2, 2, 1000000.0f);
 
 
 		// Setting up GL lighting
@@ -151,9 +151,8 @@ namespace Engine
 
 	void PhysicsDemoState::Update()
 	{
-		//m_partImmovable.Update();
+		m_partImmovable.Update();
 		m_partMovable.Update();
-		//m_partMovable.AddForce(Vec3f(1, 0, 0));
 		m_spring.Update();
 
 		//m_cloth.Update();
@@ -170,7 +169,7 @@ namespace Engine
 
 		if (k.keysym.sym == SDLK_w && k.state == SDL_PRESSED)
 		{
-			m_partMovable.AddForce(Vec3f(1, 0, 0));
+			m_partMovable.AddForce(Vec3f(0, 1, 0));
 		}
 	}
 }

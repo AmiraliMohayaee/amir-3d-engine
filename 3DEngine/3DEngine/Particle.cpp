@@ -11,24 +11,36 @@ namespace Engine
 	{
 		m_mass = 0;
 		m_invMass = 0;
+		m_pos = Vec3f(0, 0, 0);
+		m_vel = Vec3f(0, 0, 0);
 	}
 
 	void Particle::UpdateEuler()
-	{
+	{	
 		float dt = Timer::Instance()->GetDt();
-	
+
+		static const Vec3f GRAVITY(0, -0.5f, 0);
+
+		m_acceleration = m_forces * m_invMass;
+		//m_acceleration += GRAVITY;
 		Vec3f m_oldVel = m_vel;
-
 		m_vel += m_acceleration * dt;
-		////m_vel *= 0.9999f;
+		if (m_forces.y != 0.0f)
+		{
+			std::cout << "BEFORE: Particle y position is at " << m_pos.y << " .\n";
+		}
 
-		// Average Vel multiplied by DT
+		// Average Vel multiplied DV by DT
 		m_pos += 
-			(m_oldVel + m_vel) * dt * 0.5f;
+			((m_oldVel + m_vel) * 0.5f) * dt;
 
-		std::cout << "Particle x position is at " << m_pos.x << " .\n";
-		std::cout << "Particle y position is at " << m_pos.y << " .\n";
-		std::cout << "Particle z position is at " << m_pos.z << " .\n";
+		if (m_forces.y != 0.0f)
+		{
+			std::cout << "Particle y position is at " << m_pos.y << " .\n";
+		}
+
+		// Resetting force
+		m_forces = Vec3f();
 	}
 
 	void Particle::UpdateVerlet()
@@ -52,18 +64,19 @@ namespace Engine
 
 	void Particle::Update()
 	{
-		static const Vec3f GRAVITY(0, -0.5f, 0);
-
-		m_forces += GRAVITY;
-		//m_acceleration = m_forces * m_invMass;
-
 		//if(m_invMass > 0)
 		//{
-		//	m_acceleration += GRAVITY;
+	
 		//}
 
-		m_forces = Vec3f();
-
+		// As mass is inversely proportional to acceleration
+		// we'll simply multiply the force instead of deviding
+		// the force by mass
+		
+		if (m_forces.y != 0)
+		{
+			std::cout << "The force applied to particle on y-axis is " << m_forces.y << ".\n";
+		}
 
 		UpdateEuler();
 		//UpdateVerlet();
@@ -74,7 +87,7 @@ namespace Engine
 	void Particle::AddForce(Vec3f f)
 	{
 		m_forces += f;
-		//m_acceleration += f / m_mass;
+		//m_acceleration += f / m_invMass;
 	}
 
 	void Particle::SetInvMass(float invMass)
@@ -85,6 +98,11 @@ namespace Engine
 	Vec3f& Particle::GetPos()
 	{
 		return m_pos;
+	}
+
+	Vec3f Particle::GetForce()
+	{
+		return m_forces;
 	}
 
 	void Particle::SetPos(const Vec3f& pos)
@@ -133,6 +151,16 @@ namespace Engine
 		{
 			return false;
 		}
+	}
+
+	Vec3f Particle::GetVelocity()
+	{
+		return m_vel;
+	}
+
+	Vec3f Particle::GetAcceleration()
+	{
+		return m_acceleration;
 	}
 
 	const void Particle::AddToNormal(Vec3f& normal)

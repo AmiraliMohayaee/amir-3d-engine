@@ -39,7 +39,7 @@ namespace Engine
 	//	}
 	//}
 
-	void Cloth::Initialize(float kValue, float minValue, float maxValue, float naturalLength, 
+	void Cloth::Initialize(float kValue, float minValue, float maxValue,  
 			unsigned int rows, unsigned int columns, float particleInvMass)
 	{
 		// These will be called regardless before making a lattice
@@ -53,7 +53,7 @@ namespace Engine
 		Spring newSpring;
 		newSpring.SetKVal(kValue);
 		newSpring.SetMinAndMaxVal(minValue, maxValue);
-		newSpring.SetNaturalLength(naturalLength);
+		//newSpring.SetNaturalLength(naturalLength);
 
 
 		// Setting up thye multidimentional vector of particles
@@ -68,8 +68,8 @@ namespace Engine
 			for (unsigned int c = 0; c < columns; c++)
 			{
 				// Setting every new particle's position and mass
-				m_particles[r][c].SetPos(Vec3f((float)r * naturalLength, 
-					(-static_cast<float>(static_cast<int>(c)) * naturalLength), 
+				m_particles[r][c].SetPos(Vec3f((float)r/* * naturalLength*/, 
+					(-static_cast<float>(static_cast<int>(c))/* * naturalLength*/), 
 					0));
 				m_particles[r][c].SetInvMass(particleInvMass);
 
@@ -94,19 +94,19 @@ namespace Engine
 					m_springs.push_back(newSpring);
 				}
 
-				//// Digonal Springs set up in -x +y direction
-				if ((c > 0 && r < rows-1))
-				{
-					newSpring.SetParticles(&(m_particles[r][c]), &(m_particles[r + 1][c - 1]));
-					m_springs.push_back(newSpring);
-				}
+				////// Digonal Springs set up in -x +y direction
+				//if ((c > 0 && r < rows-1))
+				//{
+				//	newSpring.SetParticles(&(m_particles[r][c]), &(m_particles[r + 1][c - 1]));
+				//	m_springs.push_back(newSpring);
+				//}
 
-				////// Diagonal Springs set up in +x +y direction
-				if (c > 0 && r > 0)
-				{
-					newSpring.SetParticles(&(m_particles[r][c]), &(m_particles[r - 1][c - 1]));
-					m_springs.push_back(newSpring);
-				}
+				//////// Diagonal Springs set up in +x +y direction
+				//if (c > 0 && r > 0)
+				//{
+				//	newSpring.SetParticles(&(m_particles[r][c]), &(m_particles[r - 1][c - 1]));
+				//	m_springs.push_back(newSpring);
+				//}
 			}
 		}
 	}
@@ -140,8 +140,6 @@ namespace Engine
 
 	void Cloth::Update()
 	{		
-		//GetClothVals();
-
 		for (ColumnVec::iterator  it = m_particles.begin();
 			it != m_particles.end();
 			it++)
@@ -158,7 +156,6 @@ namespace Engine
 			it++)
 		{
 			(it)->Update();
-			//GetClothVals();
 		}
 	}
 }

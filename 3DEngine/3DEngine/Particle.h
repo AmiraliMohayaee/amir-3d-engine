@@ -6,14 +6,15 @@
 
 // Some code snippets were taken from Jesper Mosegaard and his cloth physics demo: 
 // http://cg.alexandra.dk/2009/06/02/mosegaards-cloth-simulation-coding-tutorial/
-// While the example is not following the exact example 
+// While the example is not following the exact example, it takes the main layout
+// of the particle and spring
+
 
 namespace Engine
 {
 	class Particle
 	{
 	public:
-		
 		Particle();
 		Particle(Vec3f pos) : m_pos(pos), m_oldPos(pos), m_bMovable(true) {} 
 		Particle(float invmass) : m_invMass(invmass) {}
@@ -29,19 +30,24 @@ namespace Engine
 
 		void AddForce(Vec3f f);
 		void TimeStep();
-		Vec3f& GetPos();
+
 		void SetInvMass(float invMass);
 		void SetPos(const Vec3f& pos);
 		void ResetAcc();
 		void PosOffset(const Vec3f& offset);
 		void MakeUnmovable();
+		void ResetNormal();
 		
 		// Not used at the moment as parameters are only for OpenGL softshading
 		// To aquire particle normal for collision
 		const void AddToNormal(Vec3f& normal);	
 		Vec3f& GetNormal(); // not unit length vector
+		Vec3f GetVelocity();
+		Vec3f GetAcceleration();		
+		Vec3f& GetPos();
+		Vec3f GetForce();
 		float& GetInvMass();
-		void ResetNormal();
+
 
 	private:
 		Vec3f m_oldVel;

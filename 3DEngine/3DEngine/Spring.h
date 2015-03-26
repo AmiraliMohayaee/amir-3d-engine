@@ -1,5 +1,4 @@
-#ifndef SPRING_H_INCLUDED
-#define SPRING_H_INCLUDED
+#pragma once
 
 #include "Vec3.h"
 
@@ -19,6 +18,7 @@ namespace Engine
 		void Update();
 
 		void SetParticles(Particle* p1, Particle* p2);
+		void CalcRestoring();	// Calculated restorative force of spring
 		
 		void SetDamping();
 
@@ -41,7 +41,7 @@ namespace Engine
 
 	private:
 		float m_kValue;
-		float m_naturalLength;
+		float m_naturalLength;	// Rest distance between two particles
 		float m_minLength;
 		float m_maxLength;
 		Particle* m_particles[2];
@@ -57,5 +57,3 @@ namespace Engine
 		Vec3f m_force;	// Stores the force being applied to a particle
 	};
 }
-
-#endif
