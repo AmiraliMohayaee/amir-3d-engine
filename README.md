@@ -1,5 +1,4 @@
 # amir-3d-engine
-Automatically exported from code.google.com/p/amir-3d-engine
 
 This is a SDL 1.2/OGL 1.1 project containing many different modules, tools and libraries. 
 
