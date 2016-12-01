@@ -47,11 +47,11 @@ namespace Engine
 			O* v=dynamic_cast<O*>(ptr_);
 			if(v!=0)
 			{
-			return SmartPointer<O>(v);
+				return SmartPointer<O>(v);
 			}
 			else
 			{
-			return NULL;
+				return NULL;
 			}
 		}
 
@@ -98,6 +98,5 @@ namespace Engine
 	private:
 		RefCounted* refObject_;
 		T* ptr_;
-
 	};
 }

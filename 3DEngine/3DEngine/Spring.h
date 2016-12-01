@@ -23,7 +23,8 @@ namespace Engine
 		void SetDamping();
 
 		void SetKVal(float k);
-		void SetMinAndMaxVal(float min, float max);
+		void SetMinVal(float min);
+		void SetMaxVal(float max);
 		void SetNaturalLength(float naturalLength);
 
 		float GetKVal() const;

@@ -39,8 +39,7 @@ namespace Engine
 	//	}
 	//}
 
-	void Cloth::Initialize(float kValue, float minValue, float maxValue,  
-			unsigned int rows, unsigned int columns, float particleInvMass)
+	void Cloth::Initialize(float kValue, unsigned int rows, unsigned int columns, float particleInvMass)
 	{
 		// These will be called regardless before making a lattice
 		//SetRows(row);
@@ -52,7 +51,8 @@ namespace Engine
 
 		Spring newSpring;
 		newSpring.SetKVal(kValue);
-		newSpring.SetMinAndMaxVal(minValue, maxValue);
+		//newSpring.SetMinVal(minValue);
+		//newSpring.SetMaxVal(maxValue);
 		//newSpring.SetNaturalLength(naturalLength);
 
 

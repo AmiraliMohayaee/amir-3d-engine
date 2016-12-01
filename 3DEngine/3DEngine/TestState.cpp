@@ -1,8 +1,13 @@
+////////////////////////////////////////////////////////////////
+////	Author: Amirali Mohayaee
+////	State used for testing all the horrible things that 
+////	don't work and need fixing.
+////	Last update: 21/05/2015
+////////////////////////////////////////////////////////////////
+
+
 #include "TestState.h"
-#include "Game.h"
-#include "MyGL.h"
 #include "SoundManager.h"
-#include "FontManager.h"
 #include <SDL.h>
 #include <SDL_image.h>
 #include <assert.h>
@@ -13,15 +18,9 @@
 #include "TextureManager.h"
 #include "ObjMesh.h"
 #include "Player.h"
-#include "CollisionMesh.h"
 #include "DebugDraw.h"
 #include "Matrix.h"
-#include "TimeLine.h"
-#include "CollisionSphere.h"
-#include "MakeOctree.h"
-#include "Box3D.h"
 #include "Picking.h"
-#include "OBB3.h"
 
 
 
@@ -32,8 +31,10 @@ namespace Engine
 		GameState::OnActivated();
 
 		//CameraController* cc = new CameraController;
-		TheGame::Instance()->AddGameObject(&m_fpsCamera);
-		m_fpsCamera.SetPos(Vec3f(0, 0, 0));
+		//TheGame::Instance()->AddGameObject(&m_fpsCamera);
+		//m_fpsCamera.SetPos(Vec3f(0, 0, 0));
+
+		//tl.Load("TimeLines/tl.txt");
 
 
 		//cs1.SetRadius(1.0f);
@@ -113,6 +114,7 @@ namespace Engine
 		//glCullFace(GL_BACK);
 
 
+		// To-Do: Figure out what this was for. Cam rot or something else?
 		static float b = 0;
 		b += 0.01f;
 
@@ -122,14 +124,14 @@ namespace Engine
 		//gluPerspective(60.0, 1.0, 0.5, 1000.0);
 
 		// Setting up custom camera controller
-		m_fpsCamera.Draw();
+		//m_fpsCamera.Draw();
 
 
-		//glMatrixMode(GL_MODELVIEW);
-		//glLoadIdentity();
-		//gluLookAt(cos(b) * 20, 7, sin(b) * 20, 
-		//	0, 3, 0,
-		//	0, 1, 0);
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
+		gluLookAt(cos(b) * 20, 7, sin(b) * 20, 
+			0, 3, 0,
+			0, 1, 0);
 
 		//m_shader.UseThisShader();
 
@@ -194,7 +196,7 @@ namespace Engine
 
 	void TestState::Update()
 	{
-		m_fpsCamera.Update();	// Update camera controller
+		//m_fpsCamera.Update();	// Update camera controller
 
 		//cs1.Update(cs2);
 		//cs1.Update(cs1);

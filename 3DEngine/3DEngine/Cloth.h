@@ -25,8 +25,8 @@ namespace Engine
 		~Cloth();
 
 		// Sets and calculates all values 
-		void Initialize(float kValue, float minValue, float maxValue,  
-			unsigned int row, unsigned int column, float particleInvMass);
+		void Initialize(float kValue, unsigned int row, 
+			unsigned int column, float particleInvMass);
 
 		void DrawLattice();
 		void DrawTriangles();	// Todo later

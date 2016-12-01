@@ -1,69 +1,48 @@
+////////////////////////////////////////////////////////////////
+////	TimeLine
+////	Author: Amirali Mohayaee
+////	For fancy triggers in states. 
+////	Acts as a base class.
+////	Last update: 21/05/2015
+////////////////////////////////////////////////////////////////
+
+
 #pragma once
 
-#include <map>
 #include <iostream>
+#include <queue>
+#include <map>
 #include "Singleton.h"
-#include "Non-Copyable.h"
 #include "Factory.h"
-#include "EventHandler.h"
+#include "SmartPointer.h"
 #include "TimeLineKey.h"
-#include "Timer.h"
 
 
 namespace Engine
 {
-	class TimeLineKey;
-
 	class TimeLine
 	{
+	public:
+		TimeLine();
+		TimeLine(bool loop) : m_loop(loop) { }
+		//~TimeLine();
+
+		void AddTimeLineKey(TimeLineKey* tlk);
+
+		bool Load(const std::string &filename);
+		bool Initialize();
+
+		void PrintTime();
+		void Update();
+
 	private:
 		float m_currentTime;
-		//TimeLineKey m_timekey;
-
-	public:
-		//TimeLine() {} 
-		//bool Load(const std::string &filename);
-		//void Update(float dt);
+		bool m_loop;
 
 
-		void PrintTime()
-		{
-			// print out system of get sdl ticks
-			float deltaTime = Timer::Instance()->GetDt();
-			//float currentTime = 0;
-			float intervalTime = 0;
-
-			for (int i = 0; i <= 30; i++)
-			{
-				deltaTime++;
-				intervalTime++;
-
-				std::cout << "Current time is " << deltaTime
-					<< " .\n";
-
-				std::cout << "The interval time is at " << intervalTime 
-					<< " .\n";
-
-				// Resets the interval timer every 5 seconds
-				if (intervalTime >= 5)
-				{ 
-					std::cout << "Interval timer has reset.\n";
-					intervalTime = 0;
-				}
-
-				if (deltaTime > 30.0f)
-				{
-					std::cout << "Timer limit reached. Stopping...\n";
-					break;
-				}
-			}
-		}
-
-		void Update()
-		{
-			PrintTime();
-		}
+		//std::map<int key, int time, m_timekey> m_tKey;
+		std::queue<TimeLineKey*> m_timekey;	// Change to contrainer of smrtPtrs?
 	};
 
-	//typedef Singleton<Factory<TimeLineKey> > TheTLKFactory;
+	typedef Singleton< Factory<TimeLineKey> > TheTLKFactory;
 }

@@ -2,6 +2,7 @@
 #define BULLET_H_INCLUDED
 
 #include "btBulletDynamicsCommon.h"
+#include "RidgidBodyGO.h"
 
 namespace Engine
 {
@@ -9,15 +10,15 @@ namespace Engine
 	{
 	public:
 		Bullet();
-		void BulletCollisionCheck(GameObject* go1, 
-			GameObject* go2);
+		void BulletCollisionCheck(RidgidBodyGO* go1, 
+			RidgidBodyGO* go2);
 
 		bool BulletIsColliding();
 
 
 	private:
-		GameObject* m_go1;
-		GameObject* m_go2;
+		RidgidBodyGO* m_go1;
+		RidgidBodyGO* m_go2;
 	};
 }
 

@@ -11,6 +11,7 @@
 #include "Spring.h"
 #include "Cloth.h"
 
+
 namespace Engine
 {
 	class PhysicsDemoState : public GameState, public NonCopyable
@@ -25,12 +26,22 @@ namespace Engine
 		virtual void OnKeyboardEvent(const SDL_KeyboardEvent&);
 
 	private:
-		//FontManager text;
+		FontManager text;
 		//GLuint texId;
 
 		Particle m_partImmovable;
+		Particle m_partImmovable2;
 		Particle m_partMovable;
+		Particle m_partMovable2;
+		
 		Spring m_spring;
+		Spring m_spring2;
+		Spring m_spring3;
+		Spring m_spring4;
+
+		Spring m_spring5;
+		Spring m_spring6;
+
 		Cloth m_cloth;
 	};
 

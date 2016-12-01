@@ -3,11 +3,12 @@
 ////	Author: Amirali Mohayaee
 ////	State used for testing all the horrible things that 
 ////	don't work and need fixing.
-////	Last update: 16/01/2015
+////	Last update: 21/05/2015
 ////////////////////////////////////////////////////////////////
 
 #pragma once
 
+#include "Game.h"
 #include "GameState.h"
 #include "Singleton.h"
 #include "MyGL.h"
@@ -16,11 +17,16 @@
 #include "ObjMesh.h"
 #include "Crate.h"
 #include "CollisionSphere.h"
+#include "CollisionMesh.h"
 #include "GLShader.h"
 #include "Octree.h"
-#include "TimeLine.h"
 #include "CameraController.h"
 #include "OBB3.h"
+#include "MakeOctree.h"
+#include "Box3D.h"
+#include "File.h"
+#include "Trigger.h"
+//#include "TLSoundCue.h"
 
 
 namespace Engine
@@ -46,9 +52,11 @@ namespace Engine
 		GLShader m_shader;
 		Octree* m_oct;
 		Tris m_tris;
-		TimeLine tl;
 		OBB3 m_obb;
-		CameraController m_fpsCamera;
+		//CameraController m_fpsCamera;
+		File m_textFile;
+		//TLSoundCue m_tlkCue;
+		//Trigger<int, int> m_trigger;
 	};
 
 	typedef Singleton<TestState> TheTestState;

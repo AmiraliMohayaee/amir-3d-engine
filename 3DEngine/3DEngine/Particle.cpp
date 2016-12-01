@@ -21,6 +21,9 @@ namespace Engine
 
 		static const Vec3f GRAVITY(0, -0.5f, 0);
 
+		// As mass is inversely proportional to acceleration
+		// we'll simply multiply the force instead of deviding
+		// the force by mass
 		m_acceleration = m_forces * m_invMass;
 		//m_acceleration += GRAVITY;
 		Vec3f m_oldVel = m_vel;
@@ -69,10 +72,6 @@ namespace Engine
 	
 		//}
 
-		// As mass is inversely proportional to acceleration
-		// we'll simply multiply the force instead of deviding
-		// the force by mass
-		
 		if (m_forces.y != 0)
 		{
 			std::cout << "The force applied to particle on y-axis is " << m_forces.y << ".\n";

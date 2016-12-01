@@ -9,15 +9,16 @@
 #include "Cloth.h"
 #include "Vec3.h"
 #include <AntTweakBar.h>
+#include "Billboard.h"
+
 
 TwBar *bar;
 
 float kval;
 float minval;
 float maxval;
-float naturallength;
 float invmass;
-//const Vec3f setpos();
+
 
 namespace Engine
 {
@@ -25,45 +26,56 @@ namespace Engine
 	{
 		GameState::OnActivated();
 
+		//text.Load("Assets/fonts/Doom32Bit.png", 16, 16);
+
 		bar = TwNewBar("TweakBar");
 		TwDefine(" GLOBAL help='AntTweakBar used for changing parameters.\n' ");
 
-		//TwAddVarRW(bar, "InverseMass", TW_TYPE_FLOAT, 
-		//	&invmass,
-		//	" min=0 max=1000 group=Particle label='Inverse Mass' ");
+		TwAddVarRW(bar, "InverseMass", TW_TYPE_FLOAT, 
+			&invmass,
+			" min=0 max=1000 group=Particle label='Inverse Mass' ");
 
-		//TwAddVarRW(bar, "KValue", TW_TYPE_FLOAT, 
-		//	&kval,
-		//	" min=0 max=1000 group=Particle label='K Value' ");
+		TwAddVarRW(bar, "KValue", TW_TYPE_FLOAT, 
+			&kval,
+			" min=0 max=1000 group=Particle label='K Value' ");
 
-		//TwAddVarRW(bar, "MinimumLength", TW_TYPE_FLOAT, 
-		//	&minval,
-		//	" min=0 max=1000 group=Particle label='Minimum Length' ");
+		TwAddVarRW(bar, "MinimumLength", TW_TYPE_FLOAT, 
+			&minval,
+			" min=0 max=1000 group=Particle label='Minimum Length' ");
 
-		//TwAddVarRW(bar, "MaximumLength", TW_TYPE_FLOAT, 
-		//	&maxval,
-		//	" min=0 max=1000 group=Particle label='Maximum Length' ");
-
-		//TwAddVarRW(bar, "NaturalLength", TW_TYPE_FLOAT, 
-		//	&naturallength,
-		//	" min=0 max=1000 group=Particle label='Natural Length' ");
-
+		TwAddVarRW(bar, "MaximumLength", TW_TYPE_FLOAT, 
+			&maxval,
+			" min=0 max=1000 group=Particle label='Maximum Length' ");
 
 
 		// Testing Spring and particles
 		m_partImmovable.SetPos(Vec3f(0, 0, 0));
-		m_partMovable.SetPos(Vec3f(0, -3, 0));
-		m_partMovable.Movable();
+		m_partImmovable2.SetPos(Vec3f(3, 0, 0));
 
-		kval = 0.0001f;
-		minval = 2.8;
-		maxval = 3.2;
-		invmass = 10000000;
+		m_partMovable.SetPos(Vec3f(0, -3, 0));
+		m_partMovable2.SetPos(Vec3f(3, -3, 0));
+		m_partMovable.Movable();
+		m_partMovable2.Movable();
+
+		kval = 1.0f;
+		//minval = 2.5f;
+		//maxval = 3.5f;
+		invmass = 2;
 
 		m_spring.SetKVal(kval);
+		m_spring2.SetKVal(kval);
+		m_spring3.SetKVal(kval);
+		m_spring4.SetKVal(kval);
+
 		m_partMovable.SetInvMass(invmass);
+		m_partMovable2.SetInvMass(invmass);
 
 		m_spring.SetParticles(&m_partImmovable, &m_partMovable);
+		m_spring2.SetParticles(&m_partImmovable, &m_partImmovable2);
+		m_spring3.SetParticles(&m_partImmovable2, &m_partMovable2);
+		m_spring4.SetParticles(&m_partMovable, &m_partMovable2);
+		m_spring5.SetParticles(&m_partImmovable, &m_partMovable2);
+		m_spring6.SetParticles(&m_partImmovable2, &m_partMovable);
 
 
 		// Previous version of setting up the cloth 
@@ -71,7 +83,7 @@ namespace Engine
 		//cloth.CreateLattice(5, 5);
 
 		// Initializing the lattice 
-		//m_cloth.Initialize(1.0f, 0.7f, 1.3f, 2, 2, 1000000.0f);
+		//m_cloth.Initialize(1.0f, 2, 2, 100.0f);
 
 
 		// Setting up GL lighting
@@ -139,21 +151,44 @@ namespace Engine
 
 		// Testing
 		m_partImmovable.DrawGL();
+		m_partImmovable2.DrawGL();
 		m_partMovable.DrawGL();
+		m_partMovable2.DrawGL();
+
 		m_spring.Draw();
+		m_spring2.Draw();
+		m_spring3.Draw();
+		m_spring4.Draw();
+		m_spring5.Draw();
+		m_spring6.Draw();
+
 
 		//m_cloth.DrawLattice();		// Creating Lattice
 		TwDraw();		// Drawing AnTweakBar
+		
+		//glDisable(GL_TEXTURE_2D);
 
-		glTranslatef(-6.5,6,-9.0f); // centering the camera to the cloth object
-		glRotatef(25,0,1,0); // rotate a bit to see the cloth from the side
+		//text.Draw("Press W and D to apply force to particles.", -1.0, 0.8, 1.0f);
+
+		//glEnable(GL_TEXTURE_2D);
+
+		//glTranslatef(-6.5,6,-9.0f); // centering the camera to the cloth object
+		//glRotatef(25,0,1,0); // rotate a bit to see the cloth from the side
 	}
 
 	void PhysicsDemoState::Update()
 	{
-		m_partImmovable.Update();
+		//m_partImmovable.Update();
+		//m_partImmovable2.Update();
 		m_partMovable.Update();
+		m_partMovable2.Update();
+
 		m_spring.Update();
+		m_spring2.Update();
+		m_spring3.Update();
+		m_spring4.Update();
+		m_spring5.Update();
+		m_spring6.Update();
 
 		//m_cloth.Update();
 	}
@@ -167,9 +202,15 @@ namespace Engine
 			exit(0);
 		}
 
-		if (k.keysym.sym == SDLK_w && k.state == SDL_PRESSED)
+		// Used to move particles
+		if (k.keysym.sym == SDLK_a && k.state == SDL_PRESSED)
 		{
-			m_partMovable.AddForce(Vec3f(0, 1, 0));
+			m_partMovable.AddForce(Vec3f(0, 0.5f, 0));
+		}
+
+		if (k.keysym.sym == SDLK_d && k.state == SDL_PRESSED)
+		{
+			m_partMovable2.AddForce(Vec3f(0, 0.5f, 0));
 		}
 	}
 }

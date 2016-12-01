@@ -82,8 +82,6 @@ namespace Engine
 		m_centerx = m_eyex + c;
 		m_centery = m_eyey;
 		m_centerz = m_eyez + s;
-
-
 	}
 
 	void CameraController::FirstPersonCameraViewport()

@@ -483,6 +483,12 @@
     <ClInclude Include="DecimalToHex.h">
       <Filter>Header Files\Maths</Filter>
     </ClInclude>
+    <ClInclude Include="TLSoundCue.h">
+      <Filter>Header Files\TimeLine</Filter>
+    </ClInclude>
+    <ClInclude Include="Trigger.h">
+      <Filter>Header Files\TimeLine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Log.cpp">

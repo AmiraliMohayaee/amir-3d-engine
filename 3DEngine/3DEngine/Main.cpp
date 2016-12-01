@@ -12,7 +12,7 @@
 #include "Timer.h"
 #include "Screen.h"
 #include "Report.h"
-#include "Joystick.h"
+//#include "Joystick.h"
 #include "Game.h"
 #include "PlayState.h"
 #include "SplashState.h"
@@ -56,18 +56,18 @@ int main(int argc, char** argv)
 
 	//glewInit();
 
-	 GLenum GlewINIT = glewInit();
-	 if (GlewINIT != GLEW_OK)
-	 {
-		 std::cout << "Glew failed to Initialize. Error: " << glewGetErrorString(GlewINIT) << std::endl;
-		 exit(0);
-	 }
+	GLenum GlewINIT = glewInit();
+	if (GlewINIT != GLEW_OK)
+	{
+		std::cout << "Glew failed to Initialize. Error: " << glewGetErrorString(GlewINIT) << std::endl;
+		exit(0);
+	}
 
 	// Initialize AntTweakBar for use with OpenGL and SDL
-    TwInit(TW_OPENGL, NULL);
+	TwInit(TW_OPENGL, NULL);
 
 	// Tell the window size to AntTweakBar and its own dimentions
-    TwWindowSize(400, 300);
+	TwWindowSize(400, 300);
 
 	//Setting Windows caption
 	SDL_WM_SetCaption("Demo", NULL);
@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 	Engine::Timer::Instance();
 
 	// Initial state transition
-	Engine::TheGame::Instance()->SetGameState(Engine::ThePhysicsDemoState::Instance());
+	Engine::TheGame::Instance()->SetGameState(Engine::TheAIDemoState::Instance());
 	Engine::TheGame::Instance()->Run();
 	
 	return 0;

@@ -42,8 +42,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IgnoreImportLibrary>false</IgnoreImportLibrary>
-    <IncludePath>$(SolutionDir)\3DEngine\GLEW\Include;$(SolutionDir)\3DEngine\ffllapi;$(SolutionDir)\3DEngine\Bullet\Include\src;C:\Program Files %28x86%29\Microsoft SDKs\Windows\v7.0A\Include;$(SolutionDir)\3DEngine\SDL\include;$(SolutionDir)\3DEngine\AntTweakBar_115\AntTweakBar\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\3DEngine\GLEW\Lib;$(SolutionDir)\3DEngine\AntTweakBar_115\AntTweakBar\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\3DEngine\GLEW\Include;$(SolutionDir)\3DEngine\ffllapi;$(SolutionDir)\3DEngine\Bullet\Include\src;C:\Program Files %28x86%29\Microsoft SDKs\Windows\v7.0A\Include;$(SolutionDir)\3DEngine\SDL\include;$(SolutionDir)\3DEngine\AntTweakBar_115\AntTweakBar\include;$(SolutionDir)\3DEngine\zlib128-dll\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\3DEngine\GLEW\Lib;$(SolutionDir)\3DEngine\AntTweakBar_115\AntTweakBar\lib;$(SolutionDir)\3DEngine\zlib128-dll\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -61,7 +61,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>AntTweakBar.lib;glew32.lib;glut32.lib;ffllapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>zdll.lib;AntTweakBar.lib;glew32.lib;glut32.lib;ffllapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -195,7 +195,9 @@
     <ClInclude Include="TimeLineKey.h" />
     <ClInclude Include="TimeLineTest.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="TLSoundCue.h" />
     <ClInclude Include="Tri.h" />
+    <ClInclude Include="Trigger.h" />
     <ClInclude Include="Vec2.h" />
     <ClInclude Include="Vec3.h" />
     <ClInclude Include="Vec4.h" />
