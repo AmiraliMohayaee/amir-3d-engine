@@ -10,7 +10,7 @@
 #endif
 
 #ifdef MAC
-#include <OpenGL/gl.h>
+#include <OpenGL/gl.h> 
 #endif
 
 #endif

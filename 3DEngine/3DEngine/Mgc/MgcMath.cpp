@@ -14,9 +14,9 @@
 #include "MgcRTLib.h"
 
 #if MGC_USE_DOUBLE
-    const MgcReal MgcMath::INFINITY = DBL_MAX;
+    const MgcReal MgcMath::INFTY = DBL_MAX;
 #else
-    const MgcReal MgcMath::INFINITY = FLT_MAX;
+    const MgcReal MgcMath::INFTY = FLT_MAX;
 #endif
 
 const MgcReal MgcMath::PI = 4.0*atan(1.0);

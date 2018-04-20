@@ -168,8 +168,8 @@ MgcVector3 MgcVector3::operator/ (MgcReal fScalar) const
     }
     else
     {
-        return MgcVector3(MgcMath::INFINITY,MgcMath::INFINITY,
-            MgcMath::INFINITY);
+        return MgcVector3(MgcMath::INFTY,MgcMath::INFTY,
+            MgcMath::INFTY);
     }
 }
 //----------------------------------------------------------------------------
@@ -184,9 +184,9 @@ MgcVector3& MgcVector3::operator/= (MgcReal fScalar)
     }
     else
     {
-        x = MgcMath::INFINITY;
-        y = MgcMath::INFINITY;
-        z = MgcMath::INFINITY;
+        x = MgcMath::INFTY;
+        y = MgcMath::INFTY;
+        z = MgcMath::INFTY;
     }
 
     return *this;

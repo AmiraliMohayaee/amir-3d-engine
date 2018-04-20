@@ -53,7 +53,7 @@ public:
     static MgcReal UnitRandom ();  // in [0,1]
     static MgcReal SymmetricRandom ();  // in [-1,1]
 
-    static const MgcReal INFINITY;
+    static const MgcReal INFTY;
     static const MgcReal PI;
     static const MgcReal TWO_PI;
     static const MgcReal HALF_PI;

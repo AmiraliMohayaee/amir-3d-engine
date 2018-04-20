@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 	Engine::Timer::Instance();
 
 	// Initial state transition
-	Engine::TheGame::Instance()->SetGameState(Engine::TheAIDemoState::Instance());
+	Engine::TheGame::Instance()->SetGameState(Engine::TheAudioDemoState::Instance());
 	Engine::TheGame::Instance()->Run();
 	
 	return 0;
