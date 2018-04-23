@@ -62,7 +62,7 @@ namespace Engine
 				// Stack empty - no path
 				return false;
 			}
-		}
+ 		}
 
 		void Draw()
 		{

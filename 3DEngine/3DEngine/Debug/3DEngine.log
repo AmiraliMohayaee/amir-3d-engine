@@ -1,1 +1,3 @@
-﻿  3DEngine.vcxproj -> D:\VisualStudioFiles\Visual Studio 2010\Projects\3DEngine\Debug\3DEngine.exe
+﻿  DepthFirstSearchTest.cpp
+d:\visualstudiofiles\visual studio 2010\projects\3dengine\3dengine\depthfirstsearchtest.cpp(65): warning C4715: 'Engine::DepthFirstSearchTest::DFSearch': not all control paths return a value
+LINK : fatal error LNK1104: cannot open file 'kernel32.lib'

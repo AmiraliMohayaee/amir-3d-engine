@@ -4,7 +4,7 @@
 #ifdef WIN32
 #include <Windows.h>
 //#include <gl/glew.h>
-#include "GLEW\Include\glew.h"
+#include <glew.h>
 #include <gl/GL.h>
 #include <gl/glut.h>
 #endif
