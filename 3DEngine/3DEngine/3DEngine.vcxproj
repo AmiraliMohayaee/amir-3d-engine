@@ -43,11 +43,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IgnoreImportLibrary>false</IgnoreImportLibrary>
-    <LibraryPath>$(SolutionDir).\External Libs\GLEW\Lib;$(SolutionDir).\External Libs\AntTweakBar_115\AntTweakBar\lib;$(SolutionDir).\External Libs\SDL\lib</LibraryPath>
+    <LibraryPath>$(SolutionDir).\External Libs\GLEW\Lib;$(SolutionDir).\External Libs\AntTweakBar_115\AntTweakBar\lib;$(SolutionDir).\External Libs\SDL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>$(SolutionDir).\External Libs\GLEW\Lib;$(SolutionDir).\External Libs\AntTweakBar_115\AntTweakBar\lib;$(SolutionDir).\External Libs\SDL\lib</LibraryPath>
+    <LibraryPath>$(SolutionDir).\External Libs\GLEW\Lib;$(SolutionDir).\External Libs\AntTweakBar_115\AntTweakBar\lib;$(SolutionDir).\External Libs\SDL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
